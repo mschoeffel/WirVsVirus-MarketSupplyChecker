@@ -1,0 +1,40 @@
+[
+  {
+    "module": "Backend",
+    "name": "backend01",
+    "directory": "Backend",
+    "port-out": 8081,
+    "port-in": 8080,
+    "maven-arguments": [
+      {
+        "key": "db.user",
+        "value": "abc"
+      },
+      {
+        "key": "db.password",
+        "value": "xyz"
+      }
+    ],
+    "parameter": [
+      {
+        "key": "spring.datasource.url",
+        "value": "jdbc:mysql://host.docker.internal:3306/SWSC"
+      },
+      {
+        "key": "spring.datasource.username",
+        "value": "admin"
+      },
+      {
+        "key": "spring.datasource.password",
+        "value": "admin"
+      }
+    ]
+  },
+  {
+    "module": "Frontend",
+    "name": "frontend01",
+    "directory": "Frontend",
+    "port-out": 8080,
+    "port-in": 80
+  }
+]
