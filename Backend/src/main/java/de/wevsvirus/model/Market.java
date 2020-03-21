@@ -2,6 +2,7 @@ package de.wevsvirus.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
+import java.util.List;
 
 @Entity(name = "market")
 @Table(name = "market")
@@ -23,6 +24,13 @@ public class Market {
     @Column(name = "city")
     @Size(max = 150)
     private String city;
+
+    @ManyToOne
+    @JoinColumn(name = "franchiseId", referencedColumnName = "id")
+    private Franchise franchise;
+
+    @OneToMany(mappedBy = "market")
+    private List<History> histories;
 
     public Market() {
     }
@@ -57,5 +65,21 @@ public class Market {
 
     public void setCity(String city) {
         this.city = city;
+    }
+
+    public Franchise getFranchise() {
+        return franchise;
+    }
+
+    public void setFranchise(Franchise franchise) {
+        this.franchise = franchise;
+    }
+
+    public List<History> getHistories() {
+        return histories;
+    }
+
+    public void setHistories(List<History> histories) {
+        this.histories = histories;
     }
 }

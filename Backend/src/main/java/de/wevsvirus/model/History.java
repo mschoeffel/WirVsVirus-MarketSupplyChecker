@@ -13,15 +13,15 @@ public class History {
   private Long id;
 
   @ManyToOne
-  @JoinColumn(name = "ID")
+  @JoinColumn(name = "marketId", referencedColumnName = "id")
   private Market market;
 
   @ManyToOne
-  @JoinColumn(name = "ID")
+  @JoinColumn(name = "productId", referencedColumnName = "id")
   private Product product;
 
   @ManyToOne
-  @JoinColumn(name = "ID")
+  @JoinColumn(name = "quantityId", referencedColumnName = "id")
   private Quantity quantity;
 
   @CreationTimestamp

@@ -1,9 +1,7 @@
 package de.wevsvirus.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Franchise {
@@ -13,6 +11,10 @@ public class Franchise {
   private Long id;
 
   private String name;
+
+  @OneToMany(mappedBy = "franchise")
+  private List<Market> markets;
+
 
   public Long getId() {
     return id;
@@ -28,5 +30,13 @@ public class Franchise {
 
   public void setName(String name) {
     this.name = name;
+  }
+
+  public List<Market> getMarkets() {
+    return markets;
+  }
+
+  public void setMarkets(List<Market> markets) {
+    this.markets = markets;
   }
 }
