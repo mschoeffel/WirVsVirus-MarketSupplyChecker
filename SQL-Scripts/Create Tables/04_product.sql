@@ -1,5 +1,6 @@
 CREATE TABLE IF NOT EXISTS product (
     ID INT AUTO_INCREMENT PRIMARY KEY,
-    productcategory_ID INT NOT NULL REFERENCES productcategory (ID),
-	Name VARCHAR(50)
+    productcategory_ID INT NOT NULL,
+	Name VARCHAR(50),
+	FOREIGN KEY (productcategory_ID) REFERENCES productcategory(ID)
 )  ENGINE=INNODB;
