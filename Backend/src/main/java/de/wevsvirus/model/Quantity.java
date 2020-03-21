@@ -4,14 +4,16 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Size;
 
 @Entity
-public class Franchise {
+public class Quantity {
 
   @Id
   @GeneratedValue(strategy = GenerationType.TABLE)
   private Long id;
 
+  @Size(max = 50)
   private String name;
 
   public Long getId() {
