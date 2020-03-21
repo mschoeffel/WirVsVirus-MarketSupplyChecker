@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS market (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    franchise_ID INT NOT NULL REFERENCES franchise (ID),
+	str_hno VARCHAR(150),
+	postcode CHAR(5),
+	city VARCHAR(150)
+)  ENGINE=INNODB;
