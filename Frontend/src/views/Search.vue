@@ -2,8 +2,8 @@
     <layout-default>
         <div class="home">
             <search-ort-comp v-if="step === 1" @forward="stepForward"></search-ort-comp>
-            <search-product-comp v-if="step === 2"></search-product-comp>
-            <search-result-comp v-if="step === 3"></search-result-comp>
+            <search-product-comp v-if="step === 2" @forward="stepForward" @back="stepBack"></search-product-comp>
+            <search-result-comp v-if="step === 3" @back="stepBack"></search-result-comp>
         </div>
     </layout-default>
 </template>

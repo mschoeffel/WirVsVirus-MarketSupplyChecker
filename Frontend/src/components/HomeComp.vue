@@ -3,7 +3,7 @@
     <v-row class="text-center">
       <v-col cols="12">
         <v-img
-          :src="require('../assets/logo.svg')"
+          :src="require('../assets/logo_wvv.png')"
           class="my-3"
           contain
           height="200"
@@ -26,8 +26,8 @@
         cols="12"
       >
         <v-row justify="center">
-          <v-btn rounded color="primary" dark x-large>Produkt<br>suchen</v-btn>
-          <v-btn rounded color="success" dark x-large>Produkt<br>Eintragen</v-btn>
+          <v-btn v-on:click="routeSearch" rounded color="primary" dark x-large>Produkt<br>suchen</v-btn>
+          <v-btn v-on:click="routeAdd" rounded color="secondary" dark x-large>Produkt<br>Eintragen</v-btn>
         </v-row>
       </v-col>
     </v-row>
@@ -36,8 +36,16 @@
 
 <script>
   export default {
-    name: 'HelloWorld',
+    name: 'HomeComp',
     data: () => ({
-    })
+    }),
+    methods: {
+      routeSearch: function () {
+        this.$router.push({ path: "/search" });
+      },
+      routeAdd: function () {
+        this.$router.push({ path: "/addInfo" });
+      }
+    }
   }
 </script>
