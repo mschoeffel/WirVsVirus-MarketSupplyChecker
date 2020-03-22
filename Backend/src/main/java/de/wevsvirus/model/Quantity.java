@@ -1,10 +1,10 @@
 package de.wevsvirus.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import javax.persistence.*;
 import javax.validation.constraints.Size;
+import java.util.List;
 
 @Entity
 public class Quantity {
@@ -15,6 +15,10 @@ public class Quantity {
 
   @Size(max = 50)
   private String name;
+
+  @JsonIgnore
+  @OneToMany(mappedBy = "quantity")
+  private List<History> histories;
 
   public Long getId() {
     return id;
@@ -30,5 +34,13 @@ public class Quantity {
 
   public void setName(String name) {
     this.name = name;
+  }
+
+  public List<History> getHistories() {
+    return histories;
+  }
+
+  public void setHistories(List<History> histories) {
+    this.histories = histories;
   }
 }

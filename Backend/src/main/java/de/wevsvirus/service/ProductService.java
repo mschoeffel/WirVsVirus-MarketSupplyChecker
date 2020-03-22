@@ -37,7 +37,7 @@ public class ProductService {
     return productRepository.findById(id)
             .map(product -> {
               product.setName(newProduct.getName());
-              product.setProductCategoryId(newProduct.getProductCategoryId());
+              product.setProductCategory(newProduct.getProductCategory());
               return productRepository.save(product);
             }).orElseGet(() -> {
               newProduct.setId(id);

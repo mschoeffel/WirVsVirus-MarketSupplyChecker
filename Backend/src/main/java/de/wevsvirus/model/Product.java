@@ -1,7 +1,10 @@
 package de.wevsvirus.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import javax.validation.constraints.Size;
+import java.util.List;
 
 @Entity
 public class Product {
@@ -10,13 +13,17 @@ public class Product {
   @GeneratedValue(strategy = GenerationType.TABLE)
   private Long id;
 
+  @JsonIgnoreProperties({"products"})
   @ManyToOne
-  @JoinColumn(name = "ID")
-  private Integer productCategoryId;
+  @JoinColumn(name = "productcategoryId", referencedColumnName = "id")
+  private ProductCategory productCategory;
 
   @Size(max = 50)
   private String name;
 
+  @JsonIgnoreProperties({"product", "histories"})
+  @OneToMany(mappedBy = "product")
+  private List<History> histories;
 
   public Long getId() {
     return id;
@@ -34,11 +41,19 @@ public class Product {
     this.name = name;
   }
 
-  public Integer getProductCategoryId() {
-    return productCategoryId;
+  public ProductCategory getProductCategory() {
+    return productCategory;
   }
 
-  public void setProductCategoryId(Integer productCategoryId) {
-    this.productCategoryId = productCategoryId;
+  public void setProductCategory(ProductCategory productCategory) {
+    this.productCategory = productCategory;
+  }
+
+  public List<History> getHistories() {
+    return histories;
+  }
+
+  public void setHistories(List<History> histories) {
+    this.histories = histories;
   }
 }

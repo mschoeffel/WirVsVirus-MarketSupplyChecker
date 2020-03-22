@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Erstellungszeit: 21. Mrz 2020 um 19:33
+-- Erstellungszeit: 21. Mrz 2020 um 21:24
 -- Server-Version: 8.0.19
 -- PHP-Version: 7.4.4
 
@@ -87,7 +87,36 @@ CREATE TABLE `history` (
   `quantity_ID` bigint NOT NULL,
   `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+--
+-- Daten für Tabelle `history`
+--
 
+INSERT INTO `history` (`ID`, `market_ID`, `product_ID`, `quantity_ID`, `timestamp`) VALUES
+(1, 1, 1, 4, '2020-03-21 21:15:08'),
+(2, 1, 81, 5, '2020-03-21 21:16:06'),
+(3, 1, 50, 1, '2020-03-21 21:17:58'),
+(4, 1, 2, 3, '2020-03-21 21:18:25'),
+(5, 1, 60, 2, '2020-03-21 21:18:43'),
+(6, 1, 44, 3, '2020-03-21 21:21:08'),
+(7, 1, 22, 1, '2020-03-21 21:21:15'),
+(8, 1, 99, 5, '2020-03-21 21:21:24'),
+(9, 1, 1, 3, '2020-03-21 21:21:37'),
+(10, 1, 47, 5, '2020-03-21 21:22:07'),
+(11, 2, 47, 5, '2020-03-21 21:22:29'),
+(12, 2, 1, 2, '2020-03-21 21:22:33'),
+(13, 2, 70, 4, '2020-03-21 21:22:42'),
+(14, 2, 100, 5, '2020-03-21 21:22:51'),
+(15, 2, 5, 2, '2020-03-21 21:22:55'),
+(16, 2, 69, 3, '2020-03-21 21:23:08'),
+(17, 2, 79, 1, '2020-03-21 21:23:20'),
+(18, 2, 79, 2, '2020-03-21 21:23:23'),
+(19, 2, 79, 5, '2020-03-21 21:23:26'),
+(20, 2, 52, 2, '2020-03-21 21:23:32'),
+(21, 2, 56, 4, '2020-03-21 21:23:38'),
+(22, 2, 102, 5, '2020-03-21 21:23:44'),
+(23, 2, 101, 1, '2020-03-21 21:24:03'),
+(24, 2, 101, 2, '2020-03-21 21:24:04'),
+(25, 2, 54, 4, '2020-03-21 21:24:15');
 -- --------------------------------------------------------
 
 --
@@ -329,6 +358,17 @@ CREATE TABLE `quantity` (
   `Name` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+--
+-- Daten für Tabelle `quantity`
+--
+
+INSERT INTO `quantity` (`ID`, `Name`) VALUES
+(1, 'Keine Angaben'),
+(2, 'leer'),
+(3, 'wenig'),
+(4, 'mittel'),
+(5, 'viel');
+
 -- --------------------------------------------------------
 
 --
@@ -406,7 +446,8 @@ ALTER TABLE `franchise`
 -- AUTO_INCREMENT für Tabelle `history`
 --
 ALTER TABLE `history`
-  MODIFY `ID` bigint NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+
 
 --
 -- AUTO_INCREMENT für Tabelle `market`
@@ -430,7 +471,7 @@ ALTER TABLE `productcategory`
 -- AUTO_INCREMENT für Tabelle `quantity`
 --
 ALTER TABLE `quantity`
-  MODIFY `ID` bigint NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints der exportierten Tabellen

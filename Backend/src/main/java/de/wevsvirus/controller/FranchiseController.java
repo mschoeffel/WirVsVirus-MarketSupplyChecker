@@ -5,6 +5,7 @@ import de.wevsvirus.service.FranchiseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController()
@@ -31,6 +32,15 @@ public class FranchiseController {
   @PostMapping()
   public Franchise createFranchise(@RequestBody Franchise franchise) {
     return franchiseService.createFranchise(franchise);
+  }
+
+  @PostMapping("/multiple")
+  public List<Franchise> createMultipleFranchise(@RequestBody List<Franchise> franchisees) {
+    List<Franchise> result = new ArrayList<>();
+    for(Franchise franchise : franchisees) {
+      result.add(franchiseService.createFranchise(franchise));
+    }
+    return result;
   }
 
   @PutMapping("/{id}")
