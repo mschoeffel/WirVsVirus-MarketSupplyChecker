@@ -1,6 +1,7 @@
 package de.wevsvirus.service;
 
 import de.wevsvirus.model.History;
+import de.wevsvirus.model.Market;
 import de.wevsvirus.repository.HistoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,6 +22,10 @@ public class HistoryService {
 
   public List<History> findAll() {
     return historyRepository.findAll();
+  }
+
+  public List<History> findAllByMarketOrderByTimestamp(Market market){
+    return historyRepository.findAllByMarketOrderByTimestamp(market);
   }
 
   public History findById(Long id) {

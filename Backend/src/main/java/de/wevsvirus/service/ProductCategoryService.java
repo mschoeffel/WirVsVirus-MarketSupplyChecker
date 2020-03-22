@@ -23,6 +23,10 @@ public class ProductCategoryService {
         return productCategoryRepository.findById(id).orElseThrow(EntityNotFoundException::new);
     }
 
+    public ProductCategory getProductCategoryByName(String name){
+        return productCategoryRepository.findByName(name).orElseThrow(EntityNotFoundException::new);
+    }
+
     public List<ProductCategory> getAllProductCategories(){
         return productCategoryRepository.findAll();
     }

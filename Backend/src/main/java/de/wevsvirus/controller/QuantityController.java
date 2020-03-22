@@ -5,6 +5,7 @@ import de.wevsvirus.service.QuantityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController()
@@ -31,6 +32,15 @@ public class QuantityController {
   @PostMapping()
   public Quantity createQuantity(@RequestBody Quantity quantity) {
     return quantityService.createQuantity(quantity);
+  }
+
+  @PostMapping("/multiple")
+  public List<Quantity> createMultipleQuantity(@RequestBody List<Quantity> quantities) {
+    List<Quantity> result = new ArrayList<>();
+    for(Quantity quantity : quantities) {
+      result.add(quantityService.createQuantity(quantity));
+    }
+    return result;
   }
 
   @PutMapping("/{id}")
