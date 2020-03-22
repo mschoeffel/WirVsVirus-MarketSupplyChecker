@@ -27,7 +27,7 @@
       >
         <v-row justify="center">
           <v-btn v-on:click="routeSearch" rounded color="primary" dark x-large>Produkt<br>suchen</v-btn>
-          <v-btn v-on:click="routeAdd" rounded color="success" dark x-large>Produkt<br>Eintragen</v-btn>
+          <v-btn v-on:click="routeAdd" rounded color="secondary" dark x-large>Produkt<br>Eintragen</v-btn>
         </v-row>
       </v-col>
     </v-row>
