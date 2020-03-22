@@ -1,6 +1,6 @@
 <template>
     <div>
-        <headline-comp></headline-comp>
+        <headline-comp v-bind:title="headlineTitle" v-bind:text="headlineText"></headline-comp>
         <v-form v-model="valid">
             <v-container>
                 <v-row>
@@ -21,7 +21,11 @@
     import HeadlineComp from "./HeadlineComp";
     export default {
         name: "SearchOrtComp",
-        components: {HeadlineComp}
+        components: {HeadlineComp},
+        data: () => ({
+            headlineTitle: "Das hier ist der Titel",
+            headlineText: "Das ist dann der ganze TExt dazu"
+        })
     }
 </script>
 
