@@ -1,9 +1,9 @@
 <template>
     <layout-default>
         <div class="home">
-            <search-ort-comp></search-ort-comp>
-            <search-product-comp></search-product-comp>
-            <search-result-comp></search-result-comp>
+            <search-ort-comp v-if="step === 1" @forward="stepForward"></search-ort-comp>
+            <search-product-comp v-if="step === 2"></search-product-comp>
+            <search-result-comp v-if="step === 3"></search-result-comp>
         </div>
     </layout-default>
 </template>
@@ -22,6 +22,21 @@
             SearchProductComp,
             SearchOrtComp,
             LayoutDefault,
+        },
+        data: () => ({
+            step: 1
+        }),
+        methods:{
+            stepBack: function() {
+                if (this.step !== 1) {
+                    this.step = this.step -1;
+                }
+            },
+            stepForward: function(){
+                if (this.step !== 3){
+                    this.step = this.step +1;
+                }
+            }
         }
     }
 </script>

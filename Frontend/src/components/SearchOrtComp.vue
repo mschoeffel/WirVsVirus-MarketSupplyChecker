@@ -10,7 +10,7 @@
                     ></v-text-field>
                 </v-row>
                 <v-row>
-                    <v-btn color="primary">Primary</v-btn>
+                    <v-btn color="primary" v-on:click="stepForward">Primary</v-btn>
                 </v-row>
             </v-container>
         </v-form>
@@ -25,7 +25,12 @@
         data: () => ({
             headlineTitle: "Das hier ist der Titel",
             headlineText: "Das ist dann der ganze TExt dazu"
-        })
+        }),
+        methods:{
+            stepForward: function () {
+                this.$emit('forward');
+            }
+        }
     }
 </script>
 

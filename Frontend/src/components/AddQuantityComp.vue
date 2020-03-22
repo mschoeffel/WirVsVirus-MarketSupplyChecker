@@ -5,8 +5,10 @@
 </template>
 
 <script>
+    import HeadlineComp from "./HeadlineComp";
     export default {
         name: "AddQuantityComp",
+        components: {HeadlineComp},
         data: () => ({
             headlineTitle: "Das hier ist der Titel",
             headlineText: "Das ist dann der ganze TExt dazu"
