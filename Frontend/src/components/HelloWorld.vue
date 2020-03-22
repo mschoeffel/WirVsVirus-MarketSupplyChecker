@@ -12,12 +12,12 @@
 
       <v-col class="mb-4">
         <h1 class="display-2 font-weight-bold mb-3">
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+          Herzlich Willkommen bei WarenRadar,
+          <br>schön, dass du uns hilfst.
         </h1>
 
         <p class="subheading font-weight-regular">
-          Kurze Beschreibung was der Market Supply Checker macht und wie die Personen helfen
-          <br>hönnen bzw. wie es funktioniert
+          WarenRadar hilft dir dabei den Supermarkt zu finden der deine Bedürfnisse am bestern erfüllt.
         </p>
       </v-col>
 
@@ -26,7 +26,9 @@
         cols="12"
       >
         <v-row justify="center">
-          <v-btn round color="primary" dark>Rounded Button</v-btn>
+          <v-btn round color="primary" dark x-large>Produkt<br>suchen</v-btn>
+          <div class="divider"></div>
+          <v-btn round color="success" dark x-large>Produkt<br>Eintragen</v-btn>
         </v-row>
       </v-col>
     </v-row>
