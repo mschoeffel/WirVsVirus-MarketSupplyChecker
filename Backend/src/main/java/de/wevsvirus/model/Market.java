@@ -1,5 +1,7 @@
 package de.wevsvirus.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.util.List;
@@ -29,6 +31,7 @@ public class Market {
     @JoinColumn(name = "franchiseId", referencedColumnName = "id")
     private Franchise franchise;
 
+    @JsonIgnoreProperties({"market", "product", "quantity"})
     @OneToMany(mappedBy = "market")
     private List<History> histories;
 

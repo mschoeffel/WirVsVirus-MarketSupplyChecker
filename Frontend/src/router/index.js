@@ -2,13 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import SoGehts from "../views/SoGehts";
-import SearchOrt from "../views/SearchOrt";
-import SearchWare from "../views/SearchWare";
-import SearchResult from "../views/SearchResult";
-import AddInfoMarket from "../views/AddInfoMarket";
-import AddInfoWare from "../views/AddInfoWare";
-import AddInfoQuantity from "../views/AddInfoQuantity";
-import AddInfoResult from "../views/AddInfoResult";
+import Search from "../views/Search";
+import AddInfo from "../views/AddInfo";
 
 Vue.use(VueRouter);
 
@@ -24,40 +19,15 @@ const routes = [
     component: SoGehts
   },
   {
-    path: '/searchCity',
-    name: 'SearchCity',
-    component: SearchOrt
+    path: '/search',
+    name: 'Search',
+    component: Search
   },
   {
-    path: '/searchProduct',
-    name: 'SearchProduct',
-    component: SearchWare
-  },
-  {
-    path: '/searchResult',
-    name: 'SearchResult',
-    component: SearchResult
-  },
-  {
-    path: '/addInfoMarket',
-    name: 'AddInfoMarket',
-    component: AddInfoMarket
-  },
-  {
-    path: '/addInfoProduct',
-    name: 'AddInfoProduct',
-    component: AddInfoWare
-  },
-  {
-    path: '/addInfoQuantity',
-    name: 'AddInfoQuantity',
-    component: AddInfoQuantity
-  },
-  {
-    path: '/addInfoResult',
-    name: 'AddInfoResult',
-    component: AddInfoResult
-  },
+    path: '/addInfo',
+    name: 'AddInfo',
+    component: AddInfo
+  }
 ]
 
 const router = new VueRouter({

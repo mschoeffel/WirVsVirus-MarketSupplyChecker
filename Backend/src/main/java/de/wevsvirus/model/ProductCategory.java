@@ -1,5 +1,8 @@
 package de.wevsvirus.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.util.List;
@@ -17,6 +20,7 @@ public class ProductCategory {
     @Size(max = 255)
     private String name;
 
+    @JsonIgnoreProperties({"productCategory", "market"})
     @OneToMany(mappedBy = "productCategory")
     private List<Product> products;
 

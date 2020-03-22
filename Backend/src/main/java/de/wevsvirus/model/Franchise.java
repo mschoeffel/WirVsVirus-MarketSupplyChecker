@@ -1,5 +1,8 @@
 package de.wevsvirus.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -12,6 +15,7 @@ public class Franchise {
 
   private String name;
 
+  @JsonIgnoreProperties({"histories", "franchise"})
   @OneToMany(mappedBy = "franchise")
   private List<Market> markets;
 

@@ -1,5 +1,7 @@
 package de.wevsvirus.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.util.List;
@@ -14,6 +16,7 @@ public class Quantity {
   @Size(max = 50)
   private String name;
 
+  @JsonIgnore
   @OneToMany(mappedBy = "quantity")
   private List<History> histories;
 

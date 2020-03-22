@@ -1,5 +1,7 @@
 package de.wevsvirus.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
@@ -12,10 +14,12 @@ public class History {
   @GeneratedValue(strategy = GenerationType.TABLE)
   private Long id;
 
+  @JsonIgnoreProperties({"histories", "franchise"})
   @ManyToOne
   @JoinColumn(name = "marketId", referencedColumnName = "id")
   private Market market;
 
+  @JsonIgnoreProperties({"histories", "productCategory"})
   @ManyToOne
   @JoinColumn(name = "productId", referencedColumnName = "id")
   private Product product;
