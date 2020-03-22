@@ -77,18 +77,17 @@
         <v-app-bar
                 :clipped-left="$vuetify.breakpoint.lgAndUp"
                 app
-                color="blue darken-3"
-                dark
         >
             <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
             <v-toolbar-title
-                    style="width: 300px"
+                    v-on:click="routeHome"
+                    style="width: 300px; cursor: pointer"
                     class="ml-0 pl-4"
             >
-                <span class="hidden-sm-and-down">Waren Radar</span>
+                <span class="hidden-sm-and-down">WarenRadar</span>
             </v-toolbar-title>
             <v-spacer />
-            <a href="/" class="v-btn v-btn--flat theme--dark">So Geht's</a>
+            <v-btn v-on:click="routeSoGehts" class="v-btn">So Geht's</v-btn>
         </v-app-bar>
         <v-content>
             <slot />
@@ -114,6 +113,14 @@
             ],
         }),
         components: {
+        },
+        methods: {
+            routeSoGehts: function() {
+            this.$router.push({ path: "/manual" });
+            },
+            routeHome: function() {
+                this.$router.push({ path: "/" });
+            }
         }
     }
 </script>
