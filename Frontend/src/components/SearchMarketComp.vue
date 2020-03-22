@@ -12,6 +12,9 @@
                     </v-text-field>
                 </v-col>
             </v-row>
+            <v-row justify="center">
+                <v-btn rounded color="secondary" v-on:click="stepForward" x-large>Weiter</v-btn>
+            </v-row>
         </v-container>
     </div>
 </template>
@@ -24,7 +27,12 @@
         data: () => ({
             headlineTitle: "Ort und Markt eingeben",
             headlineText: "Bitte trage eine PLZ und einen Ort ein. Wähle einen Markt aus und klicke dann auf \"Weiter\"."
-        })
+        }),
+        methods:{
+            stepForward: function () {
+                this.$emit('forward');
+            }
+        }
     }
 </script>
 

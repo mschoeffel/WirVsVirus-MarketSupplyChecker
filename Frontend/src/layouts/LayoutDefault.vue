@@ -74,23 +74,21 @@
             </v-list>
         </v-navigation-drawer>
 
-        <v-app-bar
-                :clipped-left="$vuetify.breakpoint.lgAndUp"
-                app
-        >
-            <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-            <v-toolbar-title
-                    v-on:click="routeHome"
-                    style="width: 300px; cursor: pointer"
-                    class="ml-0 pl-4"
-            >
+        <v-app-bar :clipped-left="$vuetify.breakpoint.lgAndUp" app>
+            <v-app-bar-nav-icon @click.stop="drawer = !drawer"/>
+            <v-btn icon large v-on:click="routeHome">
+                <v-avatar size="32px" item>
+                    <v-img :src="require('../assets/logo_small.jpg')" alt="WarenRadar"/>
+                </v-avatar>
+            </v-btn>
+            <v-toolbar-title v-on:click="routeHome" style="width: 300px; cursor: pointer" class="ml-0 pl-4">
                 <span class="hidden-sm-and-down">WarenRadar</span>
             </v-toolbar-title>
-            <v-spacer />
+            <v-spacer/>
             <v-btn v-on:click="routeSoGehts" class="v-btn">So Geht's</v-btn>
         </v-app-bar>
         <v-content>
-            <slot />
+            <slot/>
         </v-content>
     </v-app>
 </template>
@@ -105,21 +103,20 @@
             dialog: false,
             drawer: null,
             items: [
-                { icon: 'mdi-contacts', text: 'Produkt suchen' },
-                { icon: 'mdi-history', text: 'Produkt eintragen' },
-                { icon: 'mdi-content-copy', text: 'So geht\'s' },
-                { icon: 'mdi-content-copy', text: '#WirVsVirus' },
-                { icon: 'mdi-keyboard', text: 'Github' }
+                {icon: 'mdi-magnify', text: 'Produkt suchen'},
+                {icon: 'mdi-plus', text: 'Produkt eintragen'},
+                {icon: 'mdi-lightbulb-on-outline', text: 'So geht\'s'},
+                {icon: 'mdi-account-group', text: '#WirVsVirus'},
+                {icon: 'mdi-github', text: 'Github'}
             ],
         }),
-        components: {
-        },
+        components: {},
         methods: {
-            routeSoGehts: function() {
-            this.$router.push({ path: "/manual" });
+            routeSoGehts: function () {
+                this.$router.push({path: "/manual"});
             },
-            routeHome: function() {
-                this.$router.push({ path: "/" });
+            routeHome: function () {
+                this.$router.push({path: "/"});
             }
         }
     }

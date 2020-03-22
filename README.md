@@ -1,4 +1,14 @@
-## Setup MySql Docker Container
+# Wir Vs Virus Hackathon
+![Logo](Logo.png)
+
+## Projekt
+
+## Vorraussetzungen
+
+### Maven
+Maven needs to be installed.
+
+### Setup MySql Docker Container
 ```bash
 docker pull mysql/mysql-server:latest
 ```
