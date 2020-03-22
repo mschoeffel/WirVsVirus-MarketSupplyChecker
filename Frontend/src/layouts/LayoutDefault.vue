@@ -93,12 +93,10 @@
         <v-content>
             <slot />
         </v-content>
-        <AddButton />
     </v-app>
 </template>
 
 <script>
-    import AddButton from "../components/AddButton";
 
     export default {
         props: {
@@ -116,7 +114,6 @@
             ],
         }),
         components: {
-            AddButton
         }
     }
 </script>
