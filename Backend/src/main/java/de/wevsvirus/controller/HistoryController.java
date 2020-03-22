@@ -5,6 +5,7 @@ import de.wevsvirus.service.HistoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -31,6 +32,15 @@ public class HistoryController {
   @PostMapping()
   public History createHistory(@RequestBody History history) {
     return historyService.createHistory(history);
+  }
+
+  @PostMapping("/multiple")
+  public List<History> createMultipleHistory(@RequestBody List<History> histories) {
+    List<History> result = new ArrayList<>();
+    for(History history : histories) {
+      result.add(historyService.createHistory(history));
+    }
+    return result;
   }
 
   @DeleteMapping("/{id}")

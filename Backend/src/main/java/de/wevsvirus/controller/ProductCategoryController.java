@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import javax.persistence.EntityNotFoundException;
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -38,6 +39,15 @@ public class ProductCategoryController {
     @RequestMapping(method = RequestMethod.POST)
     public ProductCategory createProductCategory(@RequestBody ProductCategory productCategory){
         return productCategoryService.createProductCategory(productCategory);
+    }
+
+    @PostMapping("/multiple")
+    public List<ProductCategory> createMultipleProductCategory(@RequestBody List<ProductCategory> productCategories) {
+        List<ProductCategory> result = new ArrayList<>();
+        for(ProductCategory productCategory : productCategories) {
+            result.add(productCategoryService.createProductCategory(productCategory));
+        }
+        return result;
     }
 
     @RequestMapping(value = "/{id}",method = RequestMethod.PUT)
