@@ -87,7 +87,6 @@ CREATE TABLE `history` (
   `quantity_ID` bigint NOT NULL,
   `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
 --
 -- Daten für Tabelle `history`
 --
@@ -118,7 +117,6 @@ INSERT INTO `history` (`ID`, `market_ID`, `product_ID`, `quantity_ID`, `timestam
 (23, 2, 101, 1, '2020-03-21 21:24:03'),
 (24, 2, 101, 2, '2020-03-21 21:24:04'),
 (25, 2, 54, 4, '2020-03-21 21:24:15');
-
 -- --------------------------------------------------------
 
 --
@@ -449,6 +447,7 @@ ALTER TABLE `franchise`
 --
 ALTER TABLE `history`
   MODIFY `ID` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+
 
 --
 -- AUTO_INCREMENT für Tabelle `market`
