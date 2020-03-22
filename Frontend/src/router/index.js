@@ -1,6 +1,14 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import SoGehts from "../views/SoGehts";
+import SearchOrt from "../views/SearchOrt";
+import SearchWare from "../views/SearchWare";
+import SearchResult from "../views/SearchResult";
+import AddInfoMarket from "../views/AddInfoMarket";
+import AddInfoWare from "../views/AddInfoWare";
+import AddInfoQuantity from "../views/AddInfoQuantity";
+import AddInfoResult from "../views/AddInfoResult";
 
 Vue.use(VueRouter);
 
@@ -11,13 +19,45 @@ const routes = [
     component: Home
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
+    path: '/manual',
+    name: 'SoGehts',
+    component: SoGehts
+  },
+  {
+    path: '/searchCity',
+    name: 'SearchCity',
+    component: SearchOrt
+  },
+  {
+    path: '/searchProduct',
+    name: 'SearchProduct',
+    component: SearchWare
+  },
+  {
+    path: '/searchResult',
+    name: 'SearchResult',
+    component: SearchResult
+  },
+  {
+    path: '/addInfoMarket',
+    name: 'AddInfoMarket',
+    component: AddInfoMarket
+  },
+  {
+    path: '/addInfoProduct',
+    name: 'AddInfoProduct',
+    component: AddInfoWare
+  },
+  {
+    path: '/addInfoQuantity',
+    name: 'AddInfoQuantity',
+    component: AddInfoQuantity
+  },
+  {
+    path: '/addInfoResult',
+    name: 'AddInfoResult',
+    component: AddInfoResult
+  },
 ]
 
 const router = new VueRouter({
