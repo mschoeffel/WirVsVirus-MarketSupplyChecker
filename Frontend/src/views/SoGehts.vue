@@ -1,21 +1,21 @@
 <template>
     <layout-default>
-        <div class="home">
-            <HelloWorld/>
+        <div class="sogehts">
+            <SoGehtsComp/>
         </div>
     </layout-default>
 </template>
 
 <script>
     // @ is an alias to /src
-    import HelloWorld from '@/components/HelloWorld.vue'
-    import LayoutDefault from "../layouts/LayoutDefault";
+import LayoutDefault from "../layouts/LayoutDefault";
+import SoGehtsComp from '../components/SoGehtsComp';
 
     export default {
         name: 'SoGehts',
         components: {
             LayoutDefault,
-            HelloWorld
+            SoGehtsComp
         }
     }
 </script>
