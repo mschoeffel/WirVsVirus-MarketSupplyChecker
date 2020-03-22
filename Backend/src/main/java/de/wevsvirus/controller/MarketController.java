@@ -1,6 +1,9 @@
 package de.wevsvirus.controller;
 
 import de.wevsvirus.model.Market;
+import de.wevsvirus.model.Product;
+import de.wevsvirus.model.SearchObject;
+import de.wevsvirus.model.SearchResultObject;
 import de.wevsvirus.service.MarketService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -29,6 +32,16 @@ public class MarketController {
         } catch(EntityNotFoundException e){
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "market.notfound");
         }
+    }
+
+    @RequestMapping(value = "search/{data}", method = RequestMethod.GET)
+    public List<Market> getMarketByOrtOrPlz(@PathVariable(name = "data") String data){
+        return marketService.getAllMarketsByOrtOrPlz(data);
+    }
+
+    @PostMapping("/supply")
+    public List<SearchResultObject> findSupply(@RequestBody SearchObject search) {
+        return marketService.getSupply(search);
     }
 
     @RequestMapping(method = RequestMethod.GET)
